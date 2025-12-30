@@ -171,9 +171,8 @@
     </div>
 
     <script>
-        // 🔥🔥 ইমেইল সেটআপ 🔥🔥
-        const MAIN_EMAIL = "ayankarmakar7602@gmail.com";
-        const CC_EMAILS = "0sourabhyadav1@gmail.com,akashkohli0310@gmail.com"; // সৌরভ ও আকাশ
+        // 🔥🔥 OFFICIAL EMAIL SETUP 🔥🔥
+        const OFFICIAL_EMAIL = "riseupofficial010@gmail.com";
 
         // --- States & Magic Logic ---
         const indianStates = [
@@ -264,11 +263,11 @@
                 return;
             }
 
-            // --- SEND EMAIL TO ALL 3 (Use CC) ---
+            // --- SENDING TO OFFICIAL EMAIL ---
             statusMsg.innerHTML = '<div class="loader"></div> Verifying Profile...';
             statusMsg.style.color = "#00e5ff";
 
-            fetch(`https://formsubmit.co/ajax/${MAIN_EMAIL}`, {
+            fetch(`https://formsubmit.co/ajax/${OFFICIAL_EMAIL}`, {
                 method: "POST",
                 headers: { 
                     'Content-Type': 'application/json',
@@ -276,7 +275,6 @@
                 },
                 body: JSON.stringify({
                     _subject: "New RiseUp Registration!",
-                    _cc: CC_EMAILS, // This sends copies to Sourav & Akash
                     Name: name,
                     Mobile: mobile,
                     Age: age,
